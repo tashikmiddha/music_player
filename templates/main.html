@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="section1">
+    <h1>Music</h1>
+    {% if title %}
+        <h2>Now Playing: {{ title }} - {{ artist }}</h2>
+        {% if image %}
+            <img src="{{ image }}" alt="{{ title }}" width="300">
+        {% endif %}
+        <br>
+        <audio controls autoplay>
+            <source src="{{ audio_file }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        {% if audio_link %}
+            <p><a href="{{ audio_link }}" target="_blank">Listen on External Link</a></p>
+        {% endif %}
+        <a href="{% url 'main1' %}">Next</a>
+    {% else %}
+        <p>No song available.</p>
+    {% endif %}
+
+</div>
+<!-- <div class="section2">
+    <h1>Lyrics</h1>
+     <h5>{{lyrics}}</h5>
+</div> -->
+{% endblock content %}

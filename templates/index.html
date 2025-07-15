@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC PLAYER</title>
+    {% load static  %}
+    <link rel="stylesheet" href={%  static "style.css"%}>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background:linear-gradient(45deg,black,white);
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+}
+        .container{
+            color: black;
+        }
+        .container h1{
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .butt{
+            background-color: azure;
+            color: black(46, 29, 72);
+            border: 2px solid green;
+            font-size: 3rem;
+            padding: 20px;
+            border-radius: 50px;
+            animation-name: anima;
+            animation-duration: 4s;
+            transition: background-color 2s ease,font-size 2s ease;
+        }
+        .butt:hover{
+            background-color:transparent;
+            font-size: 3.5rem;
+        }
+        @keyframes anima{
+            0%{
+                font-size: 0;
+            }
+            100%{
+                font-size: 3rem;
+            }
+        }
+        .section1 h2{
+           margin-bottom: 15px;
+        }
+        .section1 {
+            width:30%;
+
+        }
+        .section1 img{
+            width:80%;
+            margin-bottom: 20px;
+            border-radius: 25px;
+        }
+        .section2{
+            width: 30%;
+            text-align: center;
+        }
+        .section1 audio{
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .section1 a{
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 10px;
+            border-radius: 2px;
+            margin-left: 35%;
+            margin-top: 10px;
+            transition: background-color 1s ease,color 1s ease;
+        }
+        .section1 a:hover{
+            background-color: transparent;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    {% load static %}
+    <script src={% static "script.js" %}></script>
+
+</body>
+</html>
